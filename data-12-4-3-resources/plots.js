@@ -36,11 +36,6 @@ init();
     };
     Plotly.restyle("plot", trace);
   };
-  
-
-  function optionChanged(newSample) {
-    console.log(newSample);
-  }
 
   function optionChanged(newSample) {
     buildMetadata(newSample);
@@ -58,3 +53,4 @@ init();
       PANEL.append("h6").text(result.location);
     });
   }
+
