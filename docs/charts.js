@@ -92,36 +92,36 @@ function buildCharts(sample) {
         l: 100,
         r: 100,
         t: 100,
-        b: 100
+        b: 100,
       }    
     };
     // 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot("bar", barDatatrace, barLayout);
 
-        // 1. Create the trace for the bubble chart.
-    // var bubbleData = [
-    //   {
-    //     x: ids,
-    //     y: values,
-    //     text: labels,
-    //     mode: "markers",
-    //     marker: {
-    //       color: ids,
-    //       size: values,
-    //       }
-    //     }
+     //   1. Create the trace for the bubble chart.
+    var bubbleData = [
+      {
+        x: ids,
+        y: values,
+        text: labels,
+        mode: "markers",
+        marker: {
+          color: ids,
+          size: values,
+          colorscale: "Rainbow",
+          }
+        }
    
-    // ];
+    ];
 
-    // // 2. Create the layout for the bubble chart.
-    // var bubbleLayout = {
-    //   margin: { t: 0 },
-    //   xaxis: { title: "Id's" },
-    //   hovermode: "closest",
-    // };
+    // 2. Create the layout for the bubble chart.
+    var bubbleLayout = {
+      title: "Bacteria Cultures Per Sample",
+      xaxis: { title: "OTU ID" },
+    };
 
-    // // 3. Use Plotly to plot the data with the layout.
-    // Plotly.plot("bubble", DataBubble, LayoutBubble);
+    // 3. Use Plotly to plot the data with the layout.
+    Plotly.plot("bubble", DataBubble, LayoutBubble);
 
     // // 1. Create a variable that filters the metadata array for the object with the desired sample number.
     // var resultsmetadataarray= data.metadata.filter(sampleObj => sampleObj.id == sample);
