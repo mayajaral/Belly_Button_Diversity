@@ -67,7 +67,7 @@ function buildCharts(sample) {
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     var ids = result.otu_ids;
     var labels = result.otu_labels;
-    var values = result.sample_values;
+    var values = result.sample_values.sort((a,b)=>b-a).slice(0,10);
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
@@ -79,8 +79,8 @@ function buildCharts(sample) {
     var barDatatrace = [{
       x: values.reverse(),
       y: yticks,
-      test: labels,
-      type: 'bar'
+      type: "bar",
+      orientation: "h"
     } 
     ];
 
