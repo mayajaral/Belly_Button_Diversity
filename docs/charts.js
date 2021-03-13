@@ -73,7 +73,7 @@ function buildCharts(sample) {
     // Hint: Get the the top 10 otu_ids and map them in descending order  
     //  so the otu_ids with the most bacteria are last. 
 
-    var yticks = ids.slice(0, 10).map(x => 'OTU ${x}').reverse()
+    var yticks = ids.slice(0, 10).map(x =>  `OTU ${x}`).reverse()
 
     // 8. Create the trace for the bar chart. 
     var barDatatrace = [{
@@ -99,29 +99,29 @@ function buildCharts(sample) {
     Plotly.newPlot("bar", barDatatrace, barLayout);
 
         // 1. Create the trace for the bubble chart.
-    var bubbleData = [
-      {
-        x: ids,
-        y: values,
-        text: labels,
-        mode: "markers",
-        marker: {
-          color: ids,
-          size: values,
-          }
-        }
+    // var bubbleData = [
+    //   {
+    //     x: ids,
+    //     y: values,
+    //     text: labels,
+    //     mode: "markers",
+    //     marker: {
+    //       color: ids,
+    //       size: values,
+    //       }
+    //     }
    
-    ];
+    // ];
 
-    // 2. Create the layout for the bubble chart.
-    var bubbleLayout = {
-      margin: { t: 0 },
-      xaxis: { title: "Id's" },
-      hovermode: "closest",
-    };
+    // // 2. Create the layout for the bubble chart.
+    // var bubbleLayout = {
+    //   margin: { t: 0 },
+    //   xaxis: { title: "Id's" },
+    //   hovermode: "closest",
+    // };
 
-    // 3. Use Plotly to plot the data with the layout.
-    Plotly.plot("bubble", DataBubble, LayoutBubble);
+    // // 3. Use Plotly to plot the data with the layout.
+    // Plotly.plot("bubble", DataBubble, LayoutBubble);
 
     // // 1. Create a variable that filters the metadata array for the object with the desired sample number.
     // var resultsmetadataarray= data.metadata.filter(sampleObj => sampleObj.id == sample);
