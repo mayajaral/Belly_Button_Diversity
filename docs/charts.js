@@ -99,7 +99,7 @@ function buildCharts(sample) {
     Plotly.newPlot("bar", barDatatrace, barLayout);
 
      //   1. Create the trace for the bubble chart.
-    var bubbleData = [
+    var DataBubble = [
       {
         x: ids,
         y: values,
@@ -115,7 +115,7 @@ function buildCharts(sample) {
     ];
 
     // 2. Create the layout for the bubble chart.
-    var bubbleLayout = {
+    var LayoutBubble = {
       title: "Bacteria Cultures Per Sample",
       xaxis: { title: "OTU ID" },
     };
